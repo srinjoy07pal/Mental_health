@@ -14,8 +14,7 @@ app = FastAPI(
 
 # CORS configuration
 origins = [
-    "http://localhost:5173", # Vite dev server
-    "http://localhost:3000", # Alternative dev server
+    "https://mental-health-analysis.netlify.app",
 ]
 
 app.add_middleware(
