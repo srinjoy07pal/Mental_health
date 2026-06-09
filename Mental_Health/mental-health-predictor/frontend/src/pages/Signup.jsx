@@ -15,7 +15,7 @@ const Signup = () => {
     setError('');
     setIsSubmitting(true);
     try {
-      await axios.post('http://localhost:8000/api/auth/signup', formData);
+      await axios.post('https://mental-health-prediction-f4md.onrender.com/api/auth/signup', formData);
       navigate('/login');
     } catch (err) {
       const detail = err.response?.data?.detail;
