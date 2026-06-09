@@ -23,7 +23,7 @@ const Dashboard = () => {
   const fetchHistory = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:8000/api/predictions/history', {
+      const res = await axios.get('https://mental-health-prediction-f4md.onrender.com/api/predictions/history', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setHistory(res.data);
@@ -41,7 +41,7 @@ const Dashboard = () => {
   const handleGenerate = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:8000/api/predictions/generate', {}, {
+      await axios.post('https://mental-health-prediction-f4md.onrender.com/api/predictions/generate', {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchHistory();
@@ -54,7 +54,7 @@ const Dashboard = () => {
     if(!window.confirm("Are you sure you want to reset your current responses? You will need to retake the questionnaire and games.")) return;
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:8000/api/predictions/reset', {}, {
+      await axios.post('https://mental-health-prediction-f4md.onrender.com/api/predictions/reset', {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       navigate('/questionnaire');
