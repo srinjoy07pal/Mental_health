@@ -51,7 +51,7 @@ const Questionnaire = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:8000/api/questionnaire/', payload, {
+      await axios.post('https://mental-health-prediction-f4md.onrender.com/api/questionnaire/', payload, {
         headers: { Authorization: `Bearer ${token}` }
       });
       navigate('/dashboard');
