@@ -22,7 +22,7 @@ const History = () => {
     const fetchHistory = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:8000/api/predictions/history', {
+        const res = await axios.get('https://mental-health-prediction-f4md.onrender.com/api/predictions/history', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setHistory(res.data);
