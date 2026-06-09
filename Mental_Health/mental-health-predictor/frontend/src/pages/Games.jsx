@@ -237,7 +237,7 @@ const Games = () => {
     const data = { game_type, score, reaction_time, mistakes };
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:8000/api/games/', data, {
+      await axios.post('https://mental-health-prediction-f4md.onrender.com/api/games/', data, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setResults([...results, { ...data, saved: true }]);
