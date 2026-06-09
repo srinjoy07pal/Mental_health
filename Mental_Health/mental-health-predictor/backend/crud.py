@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 import bcrypt
-from . import models, schemas
+import models 
+import schemas
 import datetime
 
 def get_password_hash(password):
