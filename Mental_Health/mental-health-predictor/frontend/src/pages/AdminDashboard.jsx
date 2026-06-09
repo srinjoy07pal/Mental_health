@@ -13,8 +13,8 @@ const AdminDashboard = () => {
         const headers = { Authorization: `Bearer ${token}` };
         
         const [analyticsRes, usersRes] = await Promise.all([
-          axios.get('http://localhost:8000/api/admin/analytics', { headers }),
-          axios.get('http://localhost:8000/api/admin/users', { headers })
+          axios.get('https://mental-health-prediction-f4md.onrender.com/api/admin/analytics', { headers }),
+          axios.get('https://mental-health-prediction-f4md.onrender.com/api/admin/users', { headers })
         ]);
         
         setAnalytics(analyticsRes.data);
@@ -32,7 +32,7 @@ const AdminDashboard = () => {
     if(!window.confirm("Are you sure?")) return;
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:8000/api/admin/users/${id}`, {
+      await axios.delete(`https://mental-health-prediction-f4md.onrender.com/api/admin/users/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsers(users.filter(u => u.id !== id));
