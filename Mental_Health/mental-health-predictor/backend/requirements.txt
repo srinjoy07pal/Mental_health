@@ -12,3 +12,4 @@ numpy
 xgboost
 joblib
 fpdf
+email-validator
