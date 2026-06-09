@@ -1,7 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from .. import schemas, crud, models, database, auth
-from ..ml.predict import make_prediction
+import schemas
+import crud
+import models
+import database
+import auth
+from ml.predict import make_prediction
 from typing import List
 
 router = APIRouter(prefix="/api/predictions", tags=["predictions"])
