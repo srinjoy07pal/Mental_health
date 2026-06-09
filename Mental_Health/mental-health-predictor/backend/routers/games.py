@@ -1,6 +1,10 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from .. import schemas, crud, models, database, auth
+import schemas
+import crud
+import models
+import database
+import auth
 from typing import List
 
 router = APIRouter(prefix="/api/games", tags=["games"])
