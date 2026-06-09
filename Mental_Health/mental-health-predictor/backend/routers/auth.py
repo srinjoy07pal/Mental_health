@@ -2,8 +2,11 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from datetime import timedelta
-from .. import schemas, crud, models, database, auth
-
+import schemas 
+import crud
+import models
+import database
+import auth
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
 @router.post("/signup", response_model=schemas.UserResponse)
