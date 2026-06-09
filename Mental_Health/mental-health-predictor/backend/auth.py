@@ -4,7 +4,9 @@ from jose import JWTError, jwt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
-from . import database, models, schemas
+import database
+import models
+import schemas
 import os
 
 SECRET_KEY = "mental-health-secret-key-change-in-production"
