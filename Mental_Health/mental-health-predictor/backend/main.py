@@ -8,7 +8,7 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Mental Health Predictor API",
-    description="API for the AI-Based Mental Health Predictor System",
+    description="API for the AI-Based Mental Health Predictor System"
     version="1.0.0"
 )
 
