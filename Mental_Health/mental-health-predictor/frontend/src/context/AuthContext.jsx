@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const res = await axios.get('http://localhost:8000/api/auth/me', {
+          const res = await axios.get('https://mental-health-prediction-f4md.onrender.com/api/auth/me', {
             headers: { Authorization: `Bearer ${token}` }
           });
           setUser(res.data);
@@ -31,14 +31,14 @@ export const AuthProvider = ({ children }) => {
     formData.append('username', username);
     formData.append('password', password);
     
-    const res = await axios.post('http://localhost:8000/api/auth/login', formData, {
+    const res = await axios.post('https://mental-health-prediction-f4md.onrender.com/api/auth/login', formData, {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     });
     
     const token = res.data.access_token;
     localStorage.setItem('token', token);
     
-    const userRes = await axios.get('http://localhost:8000/api/auth/me', {
+    const userRes = await axios.get('https://mental-health-prediction-f4md.onrender.com/api/auth/me', {
       headers: { Authorization: `Bearer ${token}` }
     });
     setUser(userRes.data);
