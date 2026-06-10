@@ -6,8 +6,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Use Supabase PostgreSQL connection string if available, otherwise fallback to SQLite
-DATABASE_URL = os.getenv("SUPABASE_DATABASE_URL", "sqlite:///./mental_health.db")
-
+DATABASE_URL = os.getenv(
+    "SUPABASE_DATABASE_URL",
+    "sqlite:///./mental_health.db"
+)
+print("DATABASE_URL =", DATABASE_URL)
 # check_same_thread is only needed for SQLite
 connect_args = {"check_same_thread": False} if "sqlite" in DATABASE_URL else {}
 
